@@ -42,6 +42,13 @@ export default (state = initialState, action) => {
         loading: false
       };
 
+    case UPDATE_LOG:
+      return {
+        ...state,
+        logs: state.logs.map(log =>
+          log.id === action.payload.id ? action.payload : log
+        )
+      };
     case SET_CURRENT:
       return {
         ...state,
@@ -51,13 +58,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         current: null
-      };
-    case UPDATE_LOG:
-      return {
-        ...state,
-        logs: state.logs.map(log =>
-          log.id === action.payload ? action.payload : log
-        )
       };
 
     case SEARCH_LOGS:

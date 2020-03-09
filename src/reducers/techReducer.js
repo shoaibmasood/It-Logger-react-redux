@@ -5,7 +5,6 @@ import {
   SET_LOADING,
   TECHS_ERROR
 } from '../actions/types';
-import { act } from 'react-dom/test-utils';
 
 const initialState = {
   techs: null,
